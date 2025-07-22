@@ -29,3 +29,18 @@ This is a web-based E-Book Management System built using **HTML**, **CSS**, **Ja
 
 ## 🏗️ Project Structure
 
+e-book-management/
+├── static/
+│ ├── css/
+│ ├── js/
+│ └── images/
+├── templates/
+│ ├── login.html
+│ ├── register.html
+│ ├── dashboard.html
+├── app.py
+├── models.py
+├── forms.py
+├── README.md
+└── requirements.txt
+
