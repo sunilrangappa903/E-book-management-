@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{ book.title }}</h1>
+    <p>Author: {{ book.author }}</p>
+    <p>Description: {{ book.description }}</p>
+    <a href="{{ book.file_path }}" download>Download</a>
+
+    <h2>Reviews</h2>
+    {% for review in book.reviews %}
+        <div class="review">
+            <p>Rating: {{ review.rating }}</p>
+            <p>Comment: {{ review.comment }}</p>
+        </div>
+    {% endfor %}
+
+    {% if current_user.is_authenticated %}
+        <h2>Add a Review</h2>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.rating.label }}
+                {{ form.rating(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.comment.label }}
+                {{ form.comment(class="form-control") }}
+            </div>
+            {{ form.submit(class="btn btn-primary") }}
+        </form>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Dashboard</h1>
+    <h2>Recommended Books</h2>
+    <div class="container">
+        {% for book in recommended_books %}
+            <div class="book">
+                <h3>{{ book.title }}</h3>
+                <p>Author: {{ book.author }}</p>
+                <a href="{{ url_for('routes.book_details', book_id=book.id) }}">View Details</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

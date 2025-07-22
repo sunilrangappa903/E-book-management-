@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="container" style="background-color: #f4f4f4;">
+    <div style="text-align: center; margin-top: 50px;">
+        <h2>Sign Up</h2>
+        <form style="display: inline-block; text-align: left;" class="signup-form">
+            <div style="margin-bottom: 10px;">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" class="signup-input">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" class="signup-input">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" class="signup-input">
+            </div>
+            <button type="submit" class="button_1">Sign Up</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    .signup-form {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .signup-input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: border-color 0.3s ease;
+    }
+
+    .signup-input:focus {
+        border-color: #e8491d;
+        outline: none;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+{% endblock %}
